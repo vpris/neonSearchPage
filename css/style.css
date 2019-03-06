@@ -1,0 +1,134 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper.indexPage {
+    justify-content: center;
+    background: #000;
+}
+
+.mainSection .logoContainer {
+    text-align: center;
+}
+
+#routing {
+    text-transform: uppercase;
+    color: #ff3452;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+#routing { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
+
+#routing span:nth-of-type(1) {
+    animation: lower 10s linear infinite;
+}
+#routing span:nth-of-type(2) {
+    animation: lower 20s linear infinite;
+}
+
+#routing span:nth-of-type(1) {
+    text-shadow: none;
+    opacity:.4;
+}
+
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+.searchPageContainer {
+    display: flex;
+    align-items: center;
+}
+
+.searchBarCont {
+    display: flex;
+    box-shadow: #ff3452 0 0 50px 18px;
+    height: 35px;
+    border-radius: 30px 30px 30px 30px;
+    background: #fefefe;
+    border: none;
+}
+
+.searchBarCont:hover { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
+
+
+.mainSection {
+    display: flex;
+    align-items: center;
+}
+
+.searchPage {
+    display: flex;
+    height: 100px;
+    background: #2d2d2d;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBox {
+    width: 800px;
+    height: 35px;
+    border-radius: 50px 0 0 50px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: aliceblue;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+}
+
+.searchButton {
+    background: #ffae00;
+    height: 35px;
+    width: 143px;
+    border-radius: 0 100px 100px 0;
+    outline: none;
+}
+
+.searchBox input{
+    outline: none;
+}
+
+.searchBarTextCont {
+    margin: 30px 20px;
+}
+
+.searchBarTextCont p {
+    color: #8a8a8a;
+}
+
+.searchBarWord {
+    color: #ffffff;
+    font-size: 19px;
+    text-shadow: 0 0 22px #ffffff, 0 2px 21px #ffffff;
+}
+
+
+@keyframes upper {
+    0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+        opacity:.99; text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+    }
+    20%,21.999%,63%,63.999%,65%,69.999% {
+        opacity:0.4; text-shadow: none;
+    }
+}
+@keyframes lower {
+    0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+        opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+    }
+    19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% {
+        opacity:0.4; text-shadow: none;
+    }
+}
