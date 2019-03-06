@@ -27,7 +27,7 @@
         <div class="mainSection">
             <div class="searchContainer">
                 <div class="logoContainer">
-                    <p id="routing">R<span>o</span>uti<span>n</span>g</p>
+                    <p id="routing">R<span>o</span>uti<span>n</span></p><p id="routingG">g</p>
                 </div>
                 <form action="###" method="GET">
                     <div class="searchBarCont">
