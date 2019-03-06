@@ -29,7 +29,7 @@
                 <div class="logoContainer">
                     <p id="routing">R<span>o</span>uti<span>n</span>g</p>
                 </div>
-                <form action="search.php" method="GET">
+                <form action="###" method="GET">
                     <div class="searchBarCont">
                         <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" name="term">
                         <input class="searchButton" type="submit" value="Search">
