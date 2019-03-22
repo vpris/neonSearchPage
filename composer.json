@@ -1,0 +1,8 @@
+{
+  "require": {
+      "neutron/sphinxsearch-api": "*"
+  },
+
+
+
+}

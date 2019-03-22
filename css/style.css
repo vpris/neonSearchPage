@@ -203,3 +203,21 @@ html, body {
         opacity:0.4; text-shadow: none;
     }
 }
+
+.searchResult {
+    background: #5f9ea04d;
+    width: 800px;
+    min-height: 119px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.title {
+    float: left;
+}
+
+.author {
+    float: left;
+    margin: 0 30px;
+}

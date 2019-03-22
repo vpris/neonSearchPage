@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Search</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#autocomplete_input").autocomplete({
+                source: "autocomplete.php",
+                minLength: 1,
+                maxLength: 20
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper indexPage">
+    <div class="searchPage">
+        <div class="searchPageContainer">
+            <form action="searchers.php" method="GET">
+                <div class="searchBarCont">
+                    <input class="searchBox" id="autocomplete_input" autocomplete="off" type="text" name="term">
+                    <input class="searchButton" type="submit" value="Search">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <?php
+    if (!empty($_POST['query'])) {
+        $search_result = search ($_POST['query']);
+        echo $search_result;
+    }
+    ?>
+
+</div>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
