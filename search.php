@@ -13,11 +13,6 @@ $sphinxClient->SetArrayResult(true);
 $q = '"' . $sphinxClient->EscapeString($_GET['q']) . '"/1';
 $results = $sphinxClient->query('одна');
 
-var_dump($results);
-
-
-
-
 exit;
 ?>
 

@@ -29,9 +29,9 @@
                 <div class="logoContainer">
                     <p id="routing">R<span>o</span>uti<span>n</span></p><p id="routingG">g</p>
                 </div>
-                <form action="search.php" method="get">
+                <form action="search_matching_modes.php" method="get">
                     <div class="searchBarCont">
-                        <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" name="term">
+                        <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" name="q">
                         <input class="searchButton" type="submit" value="Search">
                     </div>
                     <div class="searchBarTextCont"><p>Введите запрос. Например: <span class="searchBarWord">Siebel</span></p></div>
@@ -39,11 +39,6 @@
             </div>
         </div>
     </div>
-
-    <form name="search" method="get" action="searchers.php">
-        <input type="text" name="q" id="q" />
-        <input type="submit" value="GO" class="form-submit" />
-    </form>
 <script src="js/vendor/what-input.js"></script>
 <script src="js/vendor/foundation.js"></script>
 <script src="js/app.js"></script>
