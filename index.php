@@ -12,12 +12,12 @@ $randSearchWord = "Siebel";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Search</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/jquery-ui.js"></script>   
+    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <script src="assets/js/jquery-1.12.4.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
     <script>
         $(function() {
             $("#autocomplete_input").autocomplete({
@@ -46,9 +46,9 @@ $randSearchWord = "Siebel";
 	
         </div>
     </div>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.js"></script>
-<script src="js/app.js"></script>
+<script src="assets/js/vendor/what-input.js"></script>
+<script src="assets/js/vendor/foundation.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>
