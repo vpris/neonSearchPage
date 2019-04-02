@@ -16,13 +16,13 @@
                 <form action="search_matching_modes.php" method="GET">
                     <div class="searchBarCont">
                         <input class="searchBox" id="autocomplete_input" value="<?php echo $_GET['q'] ?>" autocomplete="off" type="search" name="q">
-                        <input class="searchButton" type="submit" value="Search">
+                        <button class="searchButton" type="submit"><img src="assets/icons/search.png"> </button>
                     </div>
                 </form>
             </div>
             <div class="modalSearchHelp">
                 <!-- Button trigger modal -->
-                <button type="button" class="toolTip btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="toolTip btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
                     <img src="assets/icons/info.png">
                         Подсказка по поиску
                     <img src="assets/icons/info.png">
