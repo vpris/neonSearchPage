@@ -1,3 +1,9 @@
+<?php
+
+$searchLinkWord = "http://localhost/foundationProject/search_matching_modes.php?q=";
+$randSearchWord = "Siebel";
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +17,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery-ui.js"></script>   
     <script>
         $(function() {
             $("#autocomplete_input").autocomplete({
@@ -34,9 +40,10 @@
                         <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" name="q">
                         <input class="searchButton" type="submit" value="Search">
                     </div>
-                    <div class="searchBarTextCont"><p>Введите запрос. Например: <span class="searchBarWord">Siebel</span></p></div>
+                    <div class="searchBarTextCont"><p>Введите запрос. Например: <span class="searchBarWord"><a href="<?= $searchLinkWord.$randSearchWord ?>"><?= $randSearchWord ?></a></span></p></div>
                 </form>
             </div>
+	
         </div>
     </div>
 <script src="js/vendor/what-input.js"></script>

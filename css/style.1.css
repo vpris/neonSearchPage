@@ -44,15 +44,6 @@ html, body {
     transform-origin: 50% 0;
 }
 
-#routingGsearch {
-    -webkit-animation: swinging 15s ease-in-out 0s infinite;
-    -moz-animation: swinging 15s ease-in-out 0s infinite;
-    animation: swinging 15s ease-in-out 0s infinite;
-    -webkit-transform-origin: 50% 0%;
-    -moz-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-}
-
 @keyframes swinging{
     0% { transform: rotate(0); }
     5% { transform: rotate(12deg); }
@@ -127,27 +118,6 @@ html, body {
     opacity:.4;
 }
 
-#routingSearch {
-    text-transform: uppercase;
-    color: #ff3452;
-    font-size: 80px;
-    margin-bottom: 30px;
-}
-
-#routingSearch { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
-
-#routingSearch span:nth-of-type(1) {
-    animation: lower 10s linear infinite;
-}
-#routingSearch span:nth-of-type(2) {
-    animation: lower 20s linear infinite;
-}
-
-#routingSearch span:nth-of-type(1) {
-    text-shadow: none;
-    opacity:.4;
-}
-
 .searchContainer {
     display: flex;
     flex-direction: column;
@@ -183,7 +153,7 @@ html, body {
     background: #151515;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .searchBox {
@@ -201,7 +171,7 @@ html, body {
 .searchButton {
     background: #ffae00;
     height: 35px;
-    width: 85px;
+    width: 143px;
     border-radius: 0 100px 100px 0;
     outline: none;
 }
@@ -262,15 +232,17 @@ html, body {
     overflow: hidden;
     margin: 50px 50px 50px;
     border-radius: 20px;
+    line-height: 2em;
     padding: 10px 20px 20px;
     box-shadow: #ff3452 8px 9px 57px 7px;
 }
 
 .title {
     overflow: hidden;
+    display: flex;
     font-size: 17px;
-    width: 380px;
-    float: left;
+    flex: 1;
+    background: rebeccapurple;
 }
 
 .title a {
@@ -295,16 +267,15 @@ html, body {
     padding: 0 20px;
 }
 
-.content {
-    line-height: 15px;
-}
-
 .postContent {
     color: #fc0;
 }
 
 
-.toolTip {margin: 25px;}
+.toolTip {
+    position: absolute;
+    right: 30px;
+}
 
 .operators {
     background: #1eb1fc;
@@ -325,10 +296,10 @@ html, body {
 }
 
 .searchResultHead {
+    display: flex;
     width: 100%;
-    /* background: #FFEB3B; */
+    background: #FFEB3B;
     min-height: 30px;
-    float: left;
 }
 
 .postUrl {
@@ -340,70 +311,40 @@ html, body {
 
 .groupsApp {
     background: #2196F3;
+    display: flex;
+    max-width: 280px;
     margin-right: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    float: right;
-    padding: 3px 8px;
     border-radius: 20px;
-    min-width: 70px;
-    max-width: 208px;
-    text-align: center;
-    min-height: 25px;
+    font-size: 11px;
+    font-weight: bold;
 }
 
 .autorizationMeth {
     background: #4CAF50;
-    padding: 3px 6px;
-    margin-right: 5px;
+    display: flex;
+    padding: 0px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     min-width: 38px;
     max-width: 100px;
-    float: right;
-    text-align: center;
 }
-
-.autorizationMeth:empty {
-    display: none;
-}
-
-.adOrOther:empty {
-    display: none;
-}
-
 
 .adOrOther {
     background: #d84439;
-    padding: 3px 6px;
+    display: flex;
+    padding: 0px 10px;
+    margin-right: 5px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     min-width: 35px;
     max-width: 170px;
     overflow: hidden;
-    float: right;
     text-align: center;
 }
 
-.rightBlocks {float: right;}
-
-.logoContainerSearch {
-    padding: 0px 25px;
-    box-sizing: border-box;
+.rightBlocks {
     display: flex;
-    margin-top: 30px;
-}
-
-#routingSearch {
-    text-transform: uppercase;
-    color: #ff3452;
-    font-size: 55px;
-}
-
-#routingGsearch {
-    text-transform: uppercase;
-    color: #ff3452;
-    font-size: 55px;
+    justify-content: flex-end;
 }
