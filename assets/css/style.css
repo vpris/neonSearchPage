@@ -272,6 +272,10 @@ html, body {
     box-shadow: #03A9F4 8px 9px 57px 7px;
 }
 
+.searchResult:hover {
+    box-shadow: none;
+}
+
 .title {
     overflow: hidden;
     font-size: 17px;
@@ -315,6 +319,18 @@ html, body {
 .toolTip {
     margin: 25px;
     border-radius: 20px;
+    color: #26a0f5;
+    background: none;
+    border: 2px solid #26a0f5;
+    outline: none;
+}
+
+.toolTip:hover {
+    color: #ffffff;
+    background: #26a0f5;
+    cursor: pointer;
+    box-shadow: #03A9F4 0 0 60px 12px;
+    outline: none;
 }
 
 .operators {
@@ -417,4 +433,17 @@ html, body {
     text-transform: uppercase;
     color: #175799;
     font-size: 55px;
+}
+
+.modal-content {
+    border: 2px solid #03A9F4;
+    border-radius: 20px;
+    box-shadow: #03A9F4 0 0 60px 12px;
+}
+
+.modal-content:hover {
+    border: 2px solid #03A9F4;
+    border-radius: 20px;
+    box-shadow: none;
+
 }

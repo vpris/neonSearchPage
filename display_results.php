@@ -22,7 +22,7 @@
             </div>
             <div class="modalSearchHelp">
                 <!-- Button trigger modal -->
-                <button type="button" class="toolTip btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="toolTip" data-toggle="modal" data-target="#exampleModal">
                     <img src="assets/icons/info.png">
                         Подсказка по поиску
                     <img src="assets/icons/info.png">
