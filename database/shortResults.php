@@ -8,7 +8,7 @@ function display_results($results, $message = null)
         print "<h3>$message</h3>";
     }
     if (!isset($results['matches'])) {
-        print "<div class='notFound'> Results not found </div>";
+        print "<div class='notFound'> Результаты не найдены </div>";
         return;
     }
     foreach ($results['matches'] as $result) {

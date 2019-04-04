@@ -12,10 +12,14 @@ $content = "{$post['content']}";
 
 
 // Вывод title, content и любых других полей по желанию
-        print "
+$resultH = "
         <div class='searchResult'>
             <div class='searchResultHead'>
-                <div class='title'><a href='$url'>$title</a></div>
+                <div class='title'><a href='$url' data-linkId='$id' >$title</a></div>";
+                if ($clicks >= 100) {
+                    $resultH .= " <img title='Популярная запись' src='assets/icons/burn.png' alt='Огонек 1' class='resultImage'> ";
+                }
+$resultH .= "
                  <div class='rightBlocks'>
                     <div class='adOrOther'>$AdOrOther</div>
                     <div class='autorizationMeth'>$autorizationMeth</div>
@@ -23,8 +27,10 @@ $content = "{$post['content']}";
                 </div>
             </div>
             <span class='postContent'>Теги: $keywords</span><br>
-            <span class='postContent'>Клики: $clicks</span><br>
             <span class='content'>$content</span>
-        </div>";
+        </div>
+";
+
+print $resultH;
 
 ?>

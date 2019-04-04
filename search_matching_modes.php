@@ -26,12 +26,12 @@ $result = $client->Query($q));
 if ( !$result )
 {
 // handle errors
-print "ERROR: " . $client->GetLastError(); } else
+print "<div class='errorLast'>ERROR: " . $client->GetLastError() . "</div>"; } else
 {
 // query OK, pretty-print the result set
 // begin with general statistics
 $got = count ( $result["matches"] );
-print "<div class='resultCount'>Найдено результатов $result[total_found].\n"; print "Показаны совпадения с 1 по $got из $result[total].\n</div>";
+print "<div class='resultCount'>Найдено результатов: $result[total_found].\n"; print "Показаны совпадения: с 1 по $got из $result[total].\n</div>";
 // print out matches themselves now
 $n = 1;
 

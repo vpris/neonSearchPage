@@ -2,23 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>New Search</title>
+    <script src="assets/js/jquery-1.12.4.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#autocomplete_input").autocomplete({
+                source: "autocomplete.php",
+                minLength: 1,
+                maxLength: 20
+            });
+        });
+    </script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
 </head>
 <body>
     <div class="wrapper searchPage">
         <div class="searchPage">
-        <div class="logoContainerSearch">
-            <p id="routingSearch">R<span>o</span>uti<span>n</span></p><p id="routingGsearch">g</p>
-        </div>
+            <a class="logoLink" href="index.php">
+                <div class="logoContainerSearch">
+                    <p id="routingSearch">R<span>o</span>uti<span>n</span></p><p id="routingGsearch">g</p>
+                </div>
+            </a>
             <div class="searchPageContainer">
                 <form action="search_matching_modes.php" method="GET">
                     <div class="searchBarCont">
-                        <input class="searchBox" id="autocomplete_input" value="<?php echo $_GET['q'] ?>" autocomplete="off" type="search" name="q">
+                        <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" value="<?php echo $_GET['q'] ?>" name="q">
                         <button class="searchButton" type="submit"><img src="assets/icons/search.png"> </button>
                     </div>
                 </form>
+                <div class="tabsContainer">
+                    <ul class="tabList">
+                        <li class="active" title="Поиск по роутингу">
+                            <a href="search.php?term=&amp;type=sites">
+                                Sites
+                            </a>
+                        </li>
+                        <li class="" title="Поиск по изображениям роутинга">
+                            <a href="search.php?term=&amp;type=images">
+                                Images
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="modalSearchHelp">
                 <!-- Button trigger modal -->
