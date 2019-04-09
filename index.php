@@ -2,50 +2,57 @@
 require('database/globalVariables.php');
 ?>
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Routing Search</title>
+	<title>Welcome to Routing</title>
+	<meta name="description" content="Search the web for information and images.">
+	<meta name="keywords" content="Search engine, routing, websites">
+	<meta name="author" content="Chuck Tornton">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="assets/css/jquery-ui.css" type="text/css" rel="stylesheet"/>
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
     <script>
         $(function() {
             $("#autocomplete_input").autocomplete({
                 source: "autocomplete.php",
-            }
-            
-            );
+                minLength: 1,
+                maxLength: 20
+            });
         });
     </script>
 </head>
 <body>
-    <div class="wrapper indexPage">
-        <div class="themeName">
-            Тема: Сияние-1980<br>
-            Routing Search: <?= $versionR ?><br>
-            Разработчик: <a href="http://confluence.raiffeisen.ru/">Владимир Присяжников</a>
-        </div>
-        <div class="mainSection">
+    <div class="overlay"></div>
+	<div class="wrapperIndex indexPage">
+	
+
+		<div class="mainSection">
+
+			<div class="logoContainer">
+				<img src="assets/images/routingLogotype.png" title="Logo of routing site" alt="Routing logo">
+			</div>
+
+
             <div class="searchContainer">
-                <div class="logoContainer">
-                    <p id="routing">R<span>o</span>uti<span>n</span></p><p id="routingG">g</p>
-                </div>
-                <form action="search_matching_modes.php" method="get">
+
+                <form action="search_matching_modes.php" method="GET">
                     <div class="searchBarCont">
                         <input class="searchBox" id="autocomplete_input" autocomplete="off" placeholder="Приложение, отв.группа, слово из текста. Скоро и сервер..." type="search" name="q">
-                        <button class="searchButton" type="submit"><img src="assets/icons/search.png"> </button>
+                        <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
                     </div>
                     <div class="searchBarTextCont"><p>Легко начать. Введите запрос, например: <span class="searchBarWord"><a href="<?= $searchLinkWord.$randSearchWord ?>"><?= $randSearchWord ?></a></span></p></div>
                 </form>
             </div>
-	
-        </div>
-    </div>
+
+
+		</div>
+
+
+	</div>
+
 </body>
 </html>

@@ -1,0 +1,36 @@
+
+В запросы:
+
+$page = 1;
+$kol = 0;
+
+$art = ($page * $kol) - $kol;
+
+В моды:
+
+
+$res = $result[total_found];
+$total = $res;
+
+$str_pag = ceil($total / $kol);
+
+
+$paginationC = "<div class='container'>
+                    <div class='row'>
+";
+print $paginationC;
+
+    for ($i = 1; $i <= $str_pag; $i++){
+        echo "
+        <ul class='pagination pagina'>
+            <li class='page-item'><a class='page-link paginaLink' href='search_matching_modes.php?page=".$i."'>".$i." </a></li>
+        </ul>
+        
+        ";
+    }
+
+$paginationC .= "   
+                    </div>
+                </div>
+";
+

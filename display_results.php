@@ -1,3 +1,19 @@
+<?php
+
+
+
+
+if(isset($_GET["q"])) {
+	$printTerm = $_GET["q"];
+}
+else {
+    exit("Нужно вернуться к поиску");
+}
+$type = isset($_GET["type"]) ? $_GET["type"] : "sites";
+$page = isset($_GET["page"]) ? $_GET["page"] : 1;
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,39 +32,29 @@
     </script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
+
 </head>
 <body>
-    <div class="wrapper searchPage">
-        <div class="searchPage">
-            <a class="logoLink" href="index.php">
-                <div class="logoContainerSearch">
-                    <p id="routingSearch">R<span>o</span>uti<span>n</span></p><p id="routingGsearch">g</p>
+<div class="wrapper">
+		<div class="header">
+			<div class="headerContent">
+				<div class="logoContainer">
+					<a href="index.php">
+						<H2>ROUTING</H2>
+					</a>
+				</div>
+				<div class="searchContainer">
+					<form action="search_matching_modes.php" method="GET">
+						<div class="searchBarContainer">
+							<input type="hidden" name="type" value="<?php echo $type; ?>">
+							<input class="searchBox" id="autocomplete_input" type="text" name="q" value="<?php echo $printTerm; ?>" autocomplete="off">
+                            <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+					</form>
                 </div>
-            </a>
-            <div class="searchPageContainer">
-                <form action="search_matching_modes.php" method="GET">
-                    <div class="searchBarCont">
-                        <input class="searchBox" id="autocomplete_input" autocomplete="off" type="search" value="<?php echo $_GET['q'] ?>" name="q">
-                        <button class="searchButton" type="submit"><img src="assets/icons/search.png"> </button>
-                    </div>
-                </form>
-                <div class="tabsContainer">
-                    <ul class="tabList">
-                        <li class="active" title="Поиск по роутингу">
-                            <a href="search.php?term=&amp;type=sites">
-                                Sites
-                            </a>
-                        </li>
-                        <li class="" title="Поиск по изображениям роутинга">
-                            <a href="search.php?term=&amp;type=images">
-                                Images
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="modalSearchHelp">
+                <div class="modalSearchHelp">
                 <!-- Button trigger modal -->
                 <button type="button" class="toolTip" data-toggle="modal" data-target="#exampleModal">
                     <img src="assets/icons/info.png">
@@ -89,13 +95,41 @@
                 </div>
                 </div>
             </div>
-        </div>
+			</div>
+			<div class="tabsContainer">
+				<ul class="tabList">
+					<li class="<?php echo $type == 'sites' ? 'active' : '' ?>" title='Поиск по роутингу'>
+						<a href='<?php echo "search_matching_modes.php?q=$printTerm&type=sites"; ?>'>
+							Sites
+						</a>
+					</li>
+					<li class="<?php echo $type == 'images' ? 'active' : '' ?>" title='Поиск по изображениям роутинга'>
+						<a href='<?php echo "search_matching_modes.php?q=$printTerm&type=images"; ?>'>
+							Images
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
         <?php
         require('database/conf.php');
         require('database/queryes.php');
-        require('database/shortResults.php');
+
+
+
+        if($type == "sites") {
+            require('database/shortResults.php');
+
+        }
+        else {
+            echo "Здесь будут картинки";
+        }
+
+        
         ?>
-    </div>
+		</div>
+	</div>
+
     <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
