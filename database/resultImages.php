@@ -4,34 +4,62 @@
 $clicks = "{$post['clicks']}";
 $url = "{$post['url']}";
 $title = "{$post['title']}";
-$AdOrOther = "{$post['AdOrOther']}";
-$autorizationMeth = "{$post['autorizationMeth']}";
-$groupsApp = "{$post['groupsApp']}";
-$keywords = "{$post['keywords']}";
-$content = "{$post['content']}";
+$imageLink = "{$post['imageLink']}";
+$alt = "{$post['alt']}";
 
 
 // Вывод title, content и любых других полей по желанию
-$resultH = "
-<div class='mainResultsSection'>
-        <div class='searchResult'>
-            <div class='searchResultHead'>
-                <div class='title'><a href='$url' data-linkId='$id' >$title</a></div>";
-                if ($clicks >= 100) {
-                    $resultH .= " <img title='Популярная запись' src='assets/icons/burn.png' alt='Огонек 1' class='resultImage'> ";
-                }
-$resultH .= "
-                 <div class='rightBlocks'>
-                    <div class='adOrOther'>$AdOrOther</div>
-                    <div class='autorizationMeth'>$autorizationMeth</div>
-                    <div class='groupsApp'>$groupsApp</div>
-                </div>
-            </div>
-            <span class='postContent'>Теги: $keywords</span><br>
-            <span class='content'>$content</span>
-        </div>
+
+
+
+
+$count = 0;
+    if($title) {
+        $displayText = $title;
+    }
+    else if($alt) {
+        $displayText = $alt;
+    }
+    else {
+        $displayText = $imageLink;
+    }
+
+        $resultImage = "<div class='imageResults'>";
+            
+            $resultImage .= "
+                            <a href='$imageLink' target='_blank'>
+                                <img src='$imageLink' alt='$alt'>
+                            </a>
+                            ";
+
+        $resultImage .= "</div>";
+
+
+        if(!empty ($imageLink)) {
+            print $resultImage;
+        }
+
+
+
+
+
+
+/*
+<div class='gridItem  image$count'>
+<a href='$imageLink' data-fancybox='image' data-caption='$displayText' data-height='600'
+    data-siteurl='$url'>
+    <script>
+    $(document).ready(function() {
+        loadImage(\"$imageLink\", \"image$count\");
+    });
+    </script>
+
+    <span class='details'>$displayText</span>
+</a>
+
 </div>
-";
-print $resultH;
+*/
+
 
 ?>
+

@@ -45,11 +45,12 @@ require('database/queryes.php');
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.fancybox.min.js"></script>
     <script src="assets/js/masonry.pkgd.min.js"></script>
-	<!-- <script type="text/javascript" src="assets/js/script.js"></script> -->
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
 </head>
 <body>
 <div class="wrapper">
-        <div class="header">
+        <div class="header cmdb">
             <div class="headerContent">
                 <div class="logoContainer">
                     <a href="index.php">
@@ -57,7 +58,7 @@ require('database/queryes.php');
                     </a>
                 </div>
                 <div class="searchContainer">
-                    <form action="search_matching_modes.php" method="GET">
+                    <form action="ucmdb_search.php" method="GET">
                         <div class="searchBarContainer">
                             <input type="hidden" name="type" value="<?php echo $type; ?>">
                             <input class="searchBox" id="autocomplete_input" type="search" name="q" value="<?php echo $printTerm; ?>" autocomplete="off">
@@ -127,29 +128,23 @@ require('database/queryes.php');
                 </ul>
             </div>
         </div>
-        <div class="leftPages">
-        <?php
 
-            if($type == "sites") {
-                require_once('database/shortResults.php');
+                
+                <?php
 
-            }
-            elseif($type == "ucmdb") {
-                require('database/shortResultsUcmdb.php');
-            }
-            else {
-                require('database/shortResultsImages.php');
-            }
+                if($type == "ucmdb") {
+                    require('database/shortResultsUcmdb.php');
+
+                }
+                elseif($type == "sites") {
+                    require('database/shortResults.php');
+                }
+                else {
+                    require('database/shortResultsImages.php');
+                }
 
 
-            ?>
-        </div>
-        
-
-        <div class="rightPages" >
-            <button data-frame-load='test'>Загрузить</button>
-            <iframe data-frame-group="test" data-frame-src="//calypso-goods.ru" width="730" height="800" frameborder="0"></iframe>
-        </div>
+                ?>
 
 </body>
 </html>

@@ -4,7 +4,6 @@
 
 * {
     font-family: 'Fira Sans', sans-serif;
-    color: #545454;
 }
 
 html,
@@ -13,12 +12,26 @@ body {
     height: 100%;
 }
 
+.searchBarTextCont {
+    font-size: 18px;
+    color: #fff;
+}
+
+.searchBarTextCont a {
+    font-size: 20px;
+    color: #2196F3;
+}
+
+.searchBarTextCont a:hover {
+    color: #ffffff;
+}
+
 .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.14);
 }
 
 .wrapperIndex {
@@ -28,17 +41,13 @@ body {
     min-height: 100%;
 }
 
-.wrapper {
 
-    display: flex;
-    flex-direction: column;
-    min-height: 18%;
-}
 
 .wrapperIndex.indexPage {
     justify-content: center;
-    background: url("../images/searchBackground1.jpg") no-repeat;
+    background: url("../backgrounds/background.jpg") no-repeat;
     background-size: cover;
+    /* background-image: linear-gradient( 154.4deg,  #506F86 30.5%, #FBB040 92.4% ); */
 }
 
 .mainSection {
@@ -129,7 +138,6 @@ body {
 .header {
     background-color: #fafafa;
     border-bottom: 1px solid #ebebeb;
-
 }
 
 .wrapper .headerContent {
@@ -179,15 +187,6 @@ body {
     color: #000;
 }
 
-.headerContent .searchBarContainer .searchButton {
-    background-color: #fff;
-    height: 44px;
-    margin-top: 0;
-    width: 44px;
-    padding-right: 20px;
-    display: flex;
-    justify-content: center;
-}
 
 .headerContent .searchBarContainer .searchButton img {
     width: 24px;
@@ -244,11 +243,11 @@ body {
     margin-bottom: 26px;
 }
 
-.resultContainer .title {
+.resultContainer .titleLink {
     margin: 0;
 }
 
-.resultContainer .title a {
+.resultContainer .titleLink a {
     color: #482dcc;
     text-decoration: none;
     font-weight: normal;
@@ -266,9 +265,10 @@ html,
 body {
     margin: 0;
     height: 100%;
+    background-attachment: fixed;
 }
 
-.wrapper {display: flex;flex-direction: column;min-height: 18%;}
+.wrapper {display: row;/* flex-direction: column; *//* min-height: 18%; */}
 
 .wrapper.indexPage {
     justify-content: center;
@@ -285,9 +285,6 @@ body {
     width: 100%;
 }
 
-.mainSection .searchContainer form {
-}
-
 .searchBox {
     width: 88px;
     border-radius: 5px;
@@ -296,16 +293,33 @@ body {
 .searchContainer .searchButton {
     color: #000000;
     background-color: transparent;
-    border: none;
+    background: url("../icons/search1.png") 12px no-repeat;
+    border: 2px solid #fff;
     border-radius: 0 20px 20px 0;
+    background-size: 35px;
     font-size: 28px;
-    font-weight: bold;
     margin-top: 0;
-    padding-left: 8px;
     cursor: pointer;
-    width: 55px;
+    width: 65px;
+    height: 44px;
     outline: none;
 }
+
+.searchContainer .searchButton:hover {
+    background-color: transparent;
+    background: url("../icons/search4.png") 13px no-repeat;
+    background-size: 35px;
+    font-size: 28px;
+    padding-left: 8px;
+    padding-top: 4px;
+    outline: none;
+}
+
+.searchContainer .searchButton img {
+    width: 36px;
+}
+
+
 
 .mainSection .searchContainer .searchBox {
     border: 0;
@@ -314,8 +328,9 @@ body {
     padding: 10px;
     box-sizing: border-box;
     font-size: 16px;
+    font-weight: bold;
     width: 70%;
-    background: transparent;
+    background: #ffffff;
     max-width: 630px;
     color: #000;
     flex: 1;
@@ -323,21 +338,29 @@ body {
 }
 
 .mainSection .logoContainer {
-
-    width: 220px;
-
-    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: -30px;
+    margin-left: -40px;
 }
+
+
 
 .logoContainer img {
 
     width: 100%;
 }
 .header {
-    background-color: #fafafa;
-    border-bottom: 1px solid #ebebeb;
-
+    /* border-bottom: 2px solid #000000; */
+    background: #607D8B;
+    margin-bottom: 50px;
 }
+
+.cmdb {
+    margin-bottom: 50px;
+    background: linear-gradient(175deg, rgba(0,189,141,1) 50%, rgba(0,137,189,1) 74%);
+}
+
 
 .wrapper .headerContent {
     display: flex;
@@ -347,29 +370,39 @@ body {
 
 .headerContent .logoContainer {
     width: 260px;
-    padding: 5px 30px;
     box-sizing: border-box;
-    margin-top: 20px;
+    margin-top: 6px;
 }
+
+.headerContent .logoContainer h2 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.headerContent .logoContainer a:hover {
+    text-decoration: none;
+}
+
 
 .headerContent .searchContainer {
     flex: 1;
 }
 
 .headerContent .searchContainer form {
-    margin: 15px 0 20px 0;
+    margin: 14px 0 20px 0;
 }
 
 .headerContent .searchBarContainer {
     height: 44px;
     border-radius: 20px;
     background-color: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0,0,0,0.08); */
     width: 70%;
     max-width: 800px;
     box-sizing: border-box;
     display: flex;
     margin: 0 auto;
+    border: 2px solid black;
 }
 
 .headerContent .searchBarContainer .searchBox {
@@ -380,18 +413,21 @@ body {
     font-size: 16px;
     color: #000;
     outline: 0;
-
     /* border-radius: 15px; */
+    font-weight: bold;
 }
 
-.headerContent .searchBarContainer .searchButton {
-    background-color: #fff;
-    height: 44px;
-    margin-top: 0;
-    width: 44px;
-    padding-right: 20px;
+.searchPageButton {
+    background-color: black;
+    border: 0;
     display: flex;
     justify-content: center;
+    border-radius: 22px;
+    width: 65px;
+    height: 40px;
+    cursor: pointer;
+    background: url(../icons/search4.png) 20px 4px no-repeat;
+    background-size: 33px;
 }
 
 .headerContent .searchBarContainer .searchButton img {
@@ -411,15 +447,20 @@ body {
 
 .tabsContainer .tabList li a {
     text-decoration: none;
+    color: #f8f8f8;
 }
 
 .tabsContainer .tabList li.active {
-    border-bottom: 3px solid #1a73a8;
+    border-bottom: 3px solid #ffffff;
+}
+
+.tabsContainer .tabList li:hover{
+    border-bottom: 3px solid #ffffff;
 }
 
 .tabsContainer .tabList li.active a {
     font-weight: bold;
-    color: #1a73a8;
+    color: #ffffff;
 }
 
 .mainResultsSection {
@@ -461,7 +502,7 @@ body {
     display: none;
 }
 
-.resultContainer .title {
+.resultContainer .titleLink {
     margin: 0;
     height: 60px;
     min-width: 635px;
@@ -471,7 +512,7 @@ body {
     margin: 5px 20px;
 }
 
-.resultContainer .title a:hover {
+.resultContainer .titleLink a:hover {
     text-decoration: underline;
 }
 
@@ -480,7 +521,7 @@ body {
 
 }
 
-.resultContainer .title a:hover {
+.resultContainer .titleLink a:hover {
     text-decoration: underline;
 }
 
@@ -632,7 +673,7 @@ a .pageNumber {
 
 .searchBarCont {
     height: 44px;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0,0,0,0.08);
     width: 70%;
     max-width: 630px;
@@ -858,7 +899,7 @@ footer p {
     top: 130px;
     left: 20px;
     font-size: 13px;
-    color: #808080;
+    color: #364459;
 }
 
 .modalSearchHelp {
@@ -871,19 +912,17 @@ footer p {
 
 }
 
-/* ÃƒÂÃ‚Â¡Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â¸ÃƒÂÃ‚Â»ÃƒÂÃ‚Â¸ Ãƒâ€˜Ã¢â€šÂ¬ÃƒÂÃ‚ÂµÃƒÂÃ‚Â·Ãƒâ€˜Ã†â€™ÃƒÂÃ‚Â»Ãƒâ€˜Ã…â€™Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â°Ãƒâ€˜Ã¢â‚¬Å¡ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â² ÃƒÂÃ‚Â¿ÃƒÂÃ‚Â¾ÃƒÂÃ‚Â¸Ãƒâ€˜Ã‚ÂÃƒÂÃ‚ÂºÃƒÂÃ‚Â° */
 
 .searchResult {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgb(245, 250, 255);
     width: 850px;
     min-height: 120px;
     max-height: 335px;
     overflow: hidden;
-    margin: 50px 100px 50px;
+    margin: 30px 100px 0;
     border-radius: 20px;
     padding: 10px 20px 20px;
-    border: 3px solid #9E9E9E;
-
+    border: 2px solid #9E9E9E;
 }
 
 .searchResult:hover {
@@ -891,7 +930,7 @@ footer p {
     box-shadow: #404040 4px 0 50px -4px;
 }
 
-.title {
+.titleLink {
     overflow: hidden;
     font-size: 17px;
     max-width: 380px;
@@ -899,11 +938,11 @@ footer p {
     margin: 5px 0;
 }
 
-.title a {
+.titleLink a {
     color: #1eb1fc;
 }
 
-.title a:hover {
+.titleLink a:hover {
     color: #0167c1;
 }
 
@@ -957,7 +996,10 @@ footer p {
     max-width: 208px;
     text-align: center;
     min-height: 25px;
+    max-height: 65px;
+    overflow: hidden;
     color: #fff;
+    cursor: progress;
 }
 
 .autorizationMeth {
@@ -1005,6 +1047,13 @@ footer p {
     float: right;
 }
 
+.imageResults img {
+    width: 100px;
+    height: 100px;
+    margin: 80px 0 0 50px;
+    float: left;
+}
+
 .resultImage {
     width: 26px;
     float: left;
@@ -1014,8 +1063,31 @@ footer p {
 
 .toolTip {
     color: #fff;
-    background: #26a0f5;
+    background: #378eca;
     height: 45px;
     border: none;
     border-radius: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(54, 19, 19);
 }
+
+.toolTip:hover {
+    color: #fff;
+    background: #03A9F4;
+    cursor: pointer;
+}
+
+.rightPages {
+    float: right;
+    width: 730px;
+    height: 800px;
+    background: rebeccapurple;
+    margin: 0px 50px;
+}
+
+
+/*
+
+    background: linear-gradient(162deg, rgba(131,58,180,1) 1%, rgba(69,211,252,1) 34%, rgba(224,29,253,1) 53%, rgba(116,150,252,1) 72%, rgba(69,211,252,1) 93%);
+
+*/ 

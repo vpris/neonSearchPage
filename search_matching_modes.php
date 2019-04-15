@@ -1,8 +1,9 @@
+
 <?php
 // Include the api class
 Require('vendor/autoload.php');
 // Include the file which contains the function to display results
-require_once('display_results.php');
+Require('display_results.php');
 $client = new SphinxClient();
 // Set search options
 $client->SetServer('localhost', 9312);
@@ -14,7 +15,6 @@ $client->SetMatchMode(SPH_MATCH_BOOLEAN);
 (isset($_GET['page']) && int_check($_GET['page']) && $_GET['page'] > 0) ? $page = $_GET['page'] - 1 : $page = 0;
 $client->SetLimits($page, 35);
 $q = !empty($_GET['q']) ? $_GET['q'] : '';
-
 display_results( 
 $result = $client->Query($q)); 
 if ( !$result )
@@ -29,3 +29,5 @@ print "<div class='resultCount'>Найдено результатов: $result[t
 // print out matches themselves now
 $n = 1;
 }
+print '</div>';
+

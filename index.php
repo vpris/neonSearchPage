@@ -8,7 +8,8 @@ require('database/globalVariables.php');
 	<title>Welcome to Routing</title>
 	<meta name="description" content="Search the web for information and images.">
 	<meta name="keywords" content="Search engine, routing, websites">
-	<meta name="author" content="Chuck Tornton">
+    <meta name="author" content="Chuck Tornton">
+    <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -33,7 +34,7 @@ require('database/globalVariables.php');
 		<div class="mainSection">
 
 			<div class="logoContainer">
-				<img src="assets/images/routingLogotype.png" title="Logo of routing site" alt="Routing logo">
+				<h1>ROUTING</h1>
 			</div>
 
 
@@ -42,7 +43,7 @@ require('database/globalVariables.php');
                 <form action="search_matching_modes.php" method="GET">
                     <div class="searchBarCont">
                         <input class="searchBox" id="autocomplete_input" autocomplete="off" placeholder="Приложение, отв.группа, слово из текста. Скоро и сервер..." type="search" name="q">
-                        <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="searchButton" type="submit"> <!-- <img src='assets/icons/search1.png'> --></button>
                     </div>
                     <div class="searchBarTextCont"><p>Легко начать. Введите запрос, например: <span class="searchBarWord"><a href="<?= $searchLinkWord.$randSearchWord ?>"><?= $randSearchWord ?></a></span></p></div>
                 </form>
@@ -53,6 +54,6 @@ require('database/globalVariables.php');
 
 
 	</div>
-
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

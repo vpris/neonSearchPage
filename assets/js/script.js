@@ -1,5 +1,3 @@
-var timer;
-
 $(document).ready(function() {
 
 
@@ -18,70 +16,7 @@ $(document).ready(function() {
 	});
 
 
-	var grid = $(".imageResults");
-
-	grid.on("layoutComplete", function() {
-		$(".gridItem img").css("visibility", "visible");
-	});
-
-	grid.masonry({
-		itemSelector: ".gridItem",
-		columnWidth: 200,
-		gutter: 5,
-		isInitLayout: false
-	});
-
-
-	$("[data-fancybox]").fancybox({
-
-		caption : function( instance, item ) {
-	        var caption = $(this).data('caption') || '';
-	        var url = $(this).data('url') || '';
-
-
-	        if ( item.type === 'image' ) {
-	            caption = (caption.length ? caption + '<br />' : '')
-	             + '<a href="' + item.src + '">View image</a><br>'
-	             + '<a href="' + url + '">Visit page</a>';
-	        }
-
-	        return caption;
-	    },
-	    afterShow : function( instance, item ) {
-	        increaseImageClicks(item.src);
-	    }
-
-
-	});
-
 });
-
-function loadImage(src, className) {
-
-	var image = $("<img>");
-
-	image.on("load", function() {
-		$("." + className + " a").append(image);
-
-		clearTimeout(timer);
-
-		timer = setTimeout(function() {
-			$(".imageResults").masonry();
-		}, 500);
-
-	});
-
-	image.on("error", function() {
-		
-		$("." + className).remove();
-
-		$.post("ajax/setBroken.php", {src: src});
-
-	});
-
-	image.attr("src", src);
-
-}
 
 
 function increaseLinkClicks(linkId, url) {
@@ -98,61 +33,3 @@ function increaseLinkClicks(linkId, url) {
 
 }
 
-function increaseImageClicks(imageUrl) {
-
-	$.post("ajax/updateImageCount.php", {imageLink: imageLink})
-	.done(function(result) {
-		if(result != "") {
-			alert(result);
-			return;
-		}
-	});
-
-}
-
-// Открытие картинок всплывающим окном
-
-	$("a.gallery").fancybox(
-		{
-			arrows: true,
-			autoStart : true,
-			slideShow: true,
-		}
-	);
-
-// Открытие страниц всплывающим окном
-
-	$('.openBtn').on('click', function() {
-		$.fancybox.open({
-			type : 'iframe',
-			toolbar  : false,
-			smallBtn : true,
-		});
-	});
-
-// Автозавершение  вводимого текста
-
-	$("#autocomplete_input").autocomplete({
-		source: "autocomplete.php",
-		minLength: 1,
-		maxLength: 20,
-
-	});
-
-$('.owl-carousel').owlCarousel({
-	rtl:true,
-	loop:true,
-	margin:10,
-	nav:true,
-	responsive:{
-		0:{
-			items:1
-		},
-		600:{
-			items:3
-		},
-		1000:{
-			items:5
-		}
-	}
-})

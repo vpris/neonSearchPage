@@ -24,7 +24,7 @@ function display_results($results, $message = null)
         $post_stmt->execute();
         $post = $post_stmt->fetch(PDO::FETCH_ASSOC);
 
-        require('database/resultImages.php');
+        require('database/resultUcmdb.php');
     }
 }
 
