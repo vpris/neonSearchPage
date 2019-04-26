@@ -12,10 +12,11 @@ require('database/globalVariables.php');
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/css/jquery-ui.css" type="text/css" rel="stylesheet"/>
-    <script src="assets/js/jquery-3.3.1.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
+    <link href="assets/css/jquery-ui.css" type="text/css" rel="stylesheet">
+
+
     <script>
         $(function() {
             $("#autocomplete_input").autocomplete({
@@ -42,18 +43,36 @@ require('database/globalVariables.php');
 
                 <form action="search_matching_modes.php" method="GET">
                     <div class="searchBarCont">
-                        <input class="searchBox" id="autocomplete_input" autocomplete="off" placeholder="Приложение, отв.группа, слово из текста. Скоро и сервер..." type="search" name="q">
+                        <input class="searchBox" id="autocomplete_input" autocomplete="off" placeholder="Приложение, отв.группа, слово из текста. Скоро и сервер..." type="search" name="q" autofocus>
                         <button class="searchButton" type="submit"> <!-- <img src='assets/icons/search1.png'> --></button>
                     </div>
                     <div class="searchBarTextCont"><p>Легко начать. Введите запрос, например: <span class="searchBarWord"><a href="<?= $searchLinkWord.$randSearchWord ?>"><?= $randSearchWord ?></a></span></p></div>
                 </form>
+                <div class="collapse" id="collapseExample">
+                <div class="card card-body popularQueryes">
+                    <button class="popularQueryesPhrase"><a href="<?= $searchLinkWord.$randSearchWord ?>"><?= $randSearchWord ?> </a></button>
+                    <button class="popularQueryesPhrase"><a href="<?= $searchLinkWord.$siebelWord ?>"><?= $siebelWord ?> </a></button>
+                    <button class="popularQueryesPhrase"><a href="<?= $searchLinkWord.$locadmin ?>"><?= $locadmin ?> </a></button>
+                    <button class="popularQueryesPhrase"><a href="<?= $searchLinkWord.$secretWord ?>"><?= $secretWord ?> </a></button>
+                </div>
             </div>
+            </div>
+                <a class="popularQ" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <div class="UpChevron"></div>
+                    <span>Также часто ищут</span>
+                </a>
+
+
 
 
 		</div>
 
 
-	</div>
-	<script type="text/javascript" src="assets/js/script.js"></script>
+    </div>
+    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

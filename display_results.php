@@ -60,7 +60,7 @@ require('database/queryes.php');
                     <form action="search_matching_modes.php" method="GET">
                         <div class="searchBarContainer">
                             <input type="hidden" name="type" value="<?php echo $type; ?>">
-                            <input class="searchBox" id="autocomplete_input" type="search" name="q" value="<?php echo $printTerm; ?>" autocomplete="off">
+                            <input class="searchBox" id="autocomplete_input" type="search" name="q" value="<?php echo $printTerm; ?>" autocomplete="off" autofocus>
                             <button class="searchPageButton" type="submit"></button>
                         </div>
                     </form>
@@ -127,29 +127,36 @@ require('database/queryes.php');
                 </ul>
             </div>
         </div>
-        <div class="leftPages">
-        <?php
 
-            if($type == "sites") {
-                require_once('database/shortResults.php');
+         
+                <?php
 
-            }
-            elseif($type == "ucmdb") {
-                require('database/shortResultsUcmdb.php');
-            }
-            else {
-                require('database/shortResultsImages.php');
-            }
+                if($type == "sites") {
+                    require('database/shortResults.php');
+
+                }
+                elseif($type == "ucmdb") {
+                    require('database/shortResultsUcmdb.php');
+                }
+                else {
+                    require('database/shortResultsImages.php');
+                }
 
 
-            ?>
-        </div>
-        
-
-        <div class="rightPages" >
+                ?>
+<!--    <div class="rightPages" >
             <button data-frame-load='test'>Загрузить</button>
             <iframe data-frame-group="test" data-frame-src="//calypso-goods.ru" width="730" height="800" frameborder="0"></iframe>
         </div>
-
+            <script>
+                    [...document.querySelectorAll('[data-frame-load]')].forEach(button => {
+                button.addEventListener('click', () => {
+                    const group = button.getAttribute('data-frame-load');
+                    [...document.querySelectorAll(`[data-frame-group="${group}"]`)].forEach(frame => {
+                        frame.setAttribute('src', frame.getAttribute('data-frame-src'));
+                    });
+                });
+            });
+        </script>  скрипт для клика на кнопку и открытия iframes -->
 </body>
 </html>
